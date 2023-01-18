@@ -21,7 +21,7 @@ export default function ShoppingList({
         }}
       />
       
-      <ol data-testid={`shopping-list-${shoppingList.id}`}>
+      <ul data-testid={`shopping-list-${shoppingList.id}`}>
         {shoppingList.shoppingItems.map((shoppingItem) => {
           return (
             <li key={shoppingItem.id}>
@@ -33,7 +33,7 @@ export default function ShoppingList({
             </li>
           );
         })}
-      </ol>
+      </ul>
       
     </div>
   );

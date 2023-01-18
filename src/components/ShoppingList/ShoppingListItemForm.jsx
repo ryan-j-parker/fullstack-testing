@@ -4,7 +4,7 @@ const defaultShoppingItem = {
   id: null,
   item_name: '',
   quantity: 0,
-  created_at: new Date().getTime().toString(),
+  // created_at: new Date().getTime().toString(),
   done: false,
 };
 
@@ -19,7 +19,7 @@ export default function ShoppingListItemForm({
 
   return (
     <form
-      data-testId={`new-shopping-item-${id}`}
+      data-testid={`new-shopping-item-${id}`}
       onSubmit={(e) => {
         e.preventDefault();
         onSubmit(newShoppingItem);
@@ -29,7 +29,7 @@ export default function ShoppingListItemForm({
       <label>
         Item name:
         <input
-          data-testId={`new-shopping-item-name-${id}`}
+          data-testid={`new-shopping-item-name-${id}`}
           type="text"
           name="name"
           value={newShoppingItem.item_name}
@@ -45,7 +45,7 @@ export default function ShoppingListItemForm({
       <label>
         Quantity:
         <input
-          data-testId={`new-shopping-item-quantity-${id}`}
+          data-testid={`new-shopping-item-quantity-${id}`}
           type="number"
           name="quantity"
           value={newShoppingItem.quantity}
@@ -59,7 +59,7 @@ export default function ShoppingListItemForm({
       </label>
       <br />
       <button
-        data-testId={`shopping-item-form-submit-button-${id}`}
+        data-testid={`shopping-item-form-submit-button-${id}`}
         onClick={(e) => {
           e.preventDefault();
           onSubmit(newShoppingItem);
