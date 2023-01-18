@@ -20,9 +20,7 @@ describe('Shopping Lists', () => {
     render(<ShoppingLists shoppingLists={shoppingLists} />);
 
     const shoppingListsList = screen.getByTestId('shopping-lists');
-
     expect(shoppingListsList).toBeInTheDocument();
-
     expect(shoppingListsList.children.length).toBe(1);
   });
 });

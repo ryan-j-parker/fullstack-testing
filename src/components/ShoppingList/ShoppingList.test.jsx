@@ -15,4 +15,5 @@ describe('Shopping List', () => {
     expect(shoppingListName).toBeInTheDocument();
     expect(shoppingListName.textContent).toBe(shoppingList.name);
   });
+
 });

@@ -8,7 +8,7 @@ import ShoppingListForm from './ShoppingListForm';
 
 describe('ShoppingListForm', () => {
 
-  it.skip('renders a form', () => {
+  it('renders a form', () => {
     render(<ShoppingListForm id="test" />);
 
     const form = screen.getByTestId('shopping-list-form-test');
@@ -16,7 +16,7 @@ describe('ShoppingListForm', () => {
     expect(form).toBeInTheDocument();
   });
 
-  it.skip('input field is operational', () => {
+  it('input field is operational', () => {
 
     render(<ShoppingListForm id="test" />);
 
@@ -26,7 +26,7 @@ describe('ShoppingListForm', () => {
     expect(input.value).toBe('testing, attention please');
   });
 
-  it.skip('submits form with shopping list on button click', () => {
+  it('submits form with shopping list on button click', () => {
     const onSubmit = jest.fn();
     
     const defaultShoppingList = {
