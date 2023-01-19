@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ConfirmingButton from '../Forms/ConfirmingButton';
 
 const defaultShoppingItem = {
   id: null,
@@ -12,6 +13,7 @@ export default function ShoppingListItemForm({
   id,
   shoppingItem,
   onSubmit,
+  onConfirm,
 }) {
   const [newShoppingItem, setNewShoppingItem] = useState(
     shoppingItem || defaultShoppingItem
@@ -58,7 +60,7 @@ export default function ShoppingListItemForm({
         />
       </label>
       <br />
-      <button
+      {/* <button
         data-testid={`shopping-item-form-submit-button-${id}`}
         onClick={(e) => {
           e.preventDefault();
@@ -67,7 +69,15 @@ export default function ShoppingListItemForm({
         type="submit"
       >
         Add item
-      </button>
+      </button> */}
+      <ConfirmingButton
+        data-testid={`shopping-item-form-submit-button-${id}`}
+        onClick={() => onSubmit(newShoppingItem)}
+        onConfirm={() => onConfirm(newShoppingItem)}
+        type="submit"
+      >
+        Add item
+      </ConfirmingButton>
     </form>
   );
 }
