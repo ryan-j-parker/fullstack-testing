@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { createShoppingList } from '../services/shopping-lists.js';
 import {
   createShoppingListItem,
+  deleteShoppingListItem,
   updateShoppingListItem,
 } from '../services/shopping-list-items.js';
 
@@ -60,7 +61,7 @@ export default function useShoppingLists() {
   };
 
   const onDeleteShoppingItem = async (shoppingListItem) => {
-    await updateShoppingListItem(shoppingListItem);
+    await deleteShoppingListItem(shoppingListItem.id);
     const newLists = [...shoppingLists];
     const listIndex = newLists.findIndex(list => {
       return list.id === shoppingListItem.shopping_list_id;
@@ -70,7 +71,7 @@ export default function useShoppingLists() {
       return item.id === shoppingListItem.id;
     });
     const newItems = [...newList.shoppingItems];
-    delete newItems[itemIndex];
+    newItems.splice(itemIndex, 1);
     newLists[listIndex] = {
       ...newList,
       shoppingItems: newItems,
