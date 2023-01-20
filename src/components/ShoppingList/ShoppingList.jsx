@@ -23,6 +23,7 @@ export default function ShoppingList({
       
       <ul data-testid={`shopping-list-${shoppingList.id}`}>
         {shoppingList.shoppingItems.map((shoppingItem) => {
+          // console.log('shoppingItem', shoppingItem);
           return (
             <li key={shoppingItem.id}>
               <ShoppingListItem

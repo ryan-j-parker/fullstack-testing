@@ -11,6 +11,7 @@ export default function ConfirmingButton({ id, children, message, onConfirm }) {
         <button
           data-testid={`confirm-confirmation-button-${id}`}
           onClick={() => onConfirm(id)}
+          type="submit"
         >
             confirm
         </button>

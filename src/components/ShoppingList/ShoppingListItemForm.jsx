@@ -13,7 +13,6 @@ export default function ShoppingListItemForm({
   id,
   shoppingItem,
   onSubmit,
-  onConfirm,
 }) {
   const [newShoppingItem, setNewShoppingItem] = useState(
     shoppingItem || defaultShoppingItem
@@ -60,7 +59,7 @@ export default function ShoppingListItemForm({
         />
       </label>
       <br />
-      {/* <button
+      <button
         data-testid={`shopping-item-form-submit-button-${id}`}
         onClick={(e) => {
           e.preventDefault();
@@ -69,15 +68,15 @@ export default function ShoppingListItemForm({
         type="submit"
       >
         Add item
-      </button> */}
-      <ConfirmingButton
+      </button>
+      {/* <ConfirmingButton
         data-testid={`shopping-item-form-submit-button-${id}`}
-        onClick={() => onSubmit(newShoppingItem)}
-        onConfirm={() => onConfirm(newShoppingItem)}
+        // onClick={() => onSubmit(newShoppingItem)}
+        onConfirm={() => undefined}
         type="submit"
       >
         Add item
-      </ConfirmingButton>
+      </ConfirmingButton> */}
     </form>
   );
 }
