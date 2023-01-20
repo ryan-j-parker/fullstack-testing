@@ -63,16 +63,11 @@ export default function useShoppingLists() {
   const onDeleteShoppingItem = async (shoppingListItem) => {
     await deleteShoppingListItem(shoppingListItem.id);
     const newLists = [...shoppingLists];
-    // console.log('newLists', newLists);
     const listIndex = newLists.findIndex(list => {
-      // console.log('list', list);
-      // console.log('shoppingListItem', shoppingListItem);
       return list.id === shoppingListItem.shopping_list_id;
     });
-    // console.log('listIndex', listIndex);
     const newList = newLists[listIndex];
     const itemIndex = newList.shoppingItems.findIndex(item => {
-      console.log('item', item);
       return item.id === shoppingListItem.id;
     });
     const newItems = [...newList.shoppingItems];

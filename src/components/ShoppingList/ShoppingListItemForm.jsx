@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import ConfirmingButton from '../Forms/ConfirmingButton';
+// import ConfirmingButton from '../Forms/ConfirmingButton';
 
 const defaultShoppingItem = {
   id: null,
   item_name: '',
   quantity: 0,
-  // created_at: new Date().getTime().toString(),
   done: false,
 };
 
