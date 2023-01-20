@@ -20,7 +20,7 @@ describe('Shopping List Item', () => {
     const updateButton = screen.getByTestId('update-shopping-item-1');
     fireEvent.click(updateButton);
     expect(onUpdateShoppingItem).toHaveBeenCalledWith(
-      shoppingItem.id
+      shoppingItem
     );
   });
 
@@ -35,7 +35,7 @@ describe('Shopping List Item', () => {
     const deleteButton = screen.getByTestId('delete-shopping-item-1');
     fireEvent.click(deleteButton);
     expect(onDeleteShoppingItem).toHaveBeenCalledWith(
-      shoppingItem.id
+      shoppingItem
     );
   });
 });
